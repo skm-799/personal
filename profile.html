@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shiv Kumar Mishra | Unix & Linux Administrator</title>
+<meta name="description" content="Personal portfolio of Shiv Kumar Mishra, Unix & Linux Administrator and System Engineer.">
+<style>
+:root{
+  --bg:#0b0f14; --panel:#111821; --panel2:#151f2b; --text:#eef3f8;
+  --muted:#9aa8b7; --line:#263342; --accent:#ffb000; --accent2:#ff8a00;
+  --white:#fff; --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:radial-gradient(circle at 80% 0%,#1c2734 0,#0b0f14 38%);
+  color:var(--text);line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+nav{
+  position:sticky;top:0;z-index:20;backdrop-filter:blur(16px);
+  background:rgba(11,15,20,.78);border-bottom:1px solid rgba(255,255,255,.07)
+}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:-.03em}.logo span{color:var(--accent)}
+.links{display:flex;gap:28px;color:var(--muted);font-size:14px}.links a:hover{color:var(--white)}
+.hero{padding:105px 0 90px;position:relative;overflow:hidden}
+.hero:after{
+  content:"";position:absolute;width:380px;height:380px;border-radius:50%;
+  background:rgba(255,176,0,.08);filter:blur(70px);right:-120px;top:20px;pointer-events:none
+}
+.eyebrow{display:inline-flex;gap:9px;align-items:center;color:var(--accent);font-size:13px;font-weight:750;letter-spacing:.1em;text-transform:uppercase}
+.dot{width:7px;height:7px;background:var(--accent);border-radius:50%;box-shadow:0 0 16px var(--accent)}
+h1{font-size:clamp(48px,8vw,88px);line-height:.98;letter-spacing:-.065em;max-width:850px;margin:20px 0}
+h1 span{color:var(--accent)}
+.hero p{max-width:700px;color:var(--muted);font-size:19px}
+.actions{display:flex;gap:13px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:12px 18px;border-radius:10px;border:1px solid var(--line);font-weight:700;font-size:14px}
+.btn.primary{background:var(--accent);color:#111;border-color:var(--accent)}
+.btn:hover{transform:translateY(-1px)}
+section{padding:78px 0}
+.section-label{font-size:12px;color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:38px;letter-spacing:-.045em;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+.card{background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015));border:1px solid var(--line);border-radius:18px;padding:28px}
+.summary{font-size:20px;color:#d6dee7;line-height:1.65}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.stat{padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:14px}
+.stat b{font-size:26px;display:block;color:var(--accent)}.stat small{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:9px}
+.tag{border:1px solid #344352;background:#101720;padding:8px 11px;border-radius:999px;color:#d9e1e8;font-size:13px}
+.timeline{position:relative;margin-top:10px}.timeline:before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:1px;background:var(--line)}
+.job{position:relative;padding:0 0 35px 38px}.job:last-child{padding-bottom:0}
+.job:before{content:"";position:absolute;left:4px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px #111821}
+.job h3{font-size:21px}.company{color:var(--accent);font-weight:700}.date{color:var(--muted);font-size:13px;margin:3px 0 12px}
+.education{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.edu h3{font-size:19px}.edu p{color:var(--muted);margin-top:6px}
+.awards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.award{padding:20px;border:1px solid var(--line);border-radius:15px;background:var(--panel)}
+.award b{display:block;margin-top:10px}.award span{color:var(--muted);font-size:13px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-item{padding:18px 0;border-bottom:1px solid var(--line)}
+.contact-item small{color:var(--muted);display:block;margin-bottom:4px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
+@media(max-width:760px){
+  .links{display:none}.hero{padding:75px 0 65px}.grid,.contact,.education{grid-template-columns:1fr}
+  .stats,.awards{grid-template-columns:1fr}.card{padding:22px}section{padding:58px 0}
+  h2{font-size:31px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#">SK<span>M</span></a>
+    <div class="links">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a>
+      <a href="#education">Education</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow"><i class="dot"></i> Unix & Linux Administrator</div>
+    <h1>Shiv Kumar <span>Mishra.</span></h1>
+    <p>System Engineer · Ex-Infosys · Ex-Shift Lead · Bengaluru, India</p>
+    <div class="actions">
+      <a class="btn primary" href="#contact">Let's connect</a>
+      <a class="btn" href="https://www.linkedin.com/in/shiv-kumar-mishra-a9986314b" target="_blank">LinkedIn ↗</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="about">
+  <div class="container">
+    <div class="section-label">01 / Profile</div>
+    <div class="grid">
+      <div>
+        <h2>Built for reliable systems.</h2>
+        <p class="summary">Proactive, flexible, confident. Ready to work. Currently working as a System Engineer at LSEG, with a background spanning Unix & Linux administration and system engineering at Infosys.</p>
+        <div class="stats">
+          <div class="stat"><b>5+ yrs</b><small>Professional experience</small></div>
+          <div class="stat"><b>2</b><small>Core organizations</small></div>
+          <div class="stat"><b>2024</b><small>Joined LSEG</small></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="section-label">Core focus</div>
+        <div class="tags" id="skills">
+          <span class="tag">Shell Scripting</span><span class="tag">Middleware</span><span class="tag">MySQL</span>
+          <span class="tag">Unix</span><span class="tag">Linux</span><span class="tag">System Administration</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-label">02 / Experience</div>
+    <h2>Career timeline</h2>
+    <div class="card timeline">
+      <article class="job">
+        <h3>System Engineer</h3><div class="company">LSEG · London Stock Exchange Group</div>
+        <div class="date">June 2024 – Present · Bengaluru, Karnataka</div>
+        <p>Current role in system engineering. The source profile identifies LSEG as the current employer.</p>
+      </article>
+      <article class="job">
+        <h3>Technology Analyst</h3><div class="company">Infosys</div>
+        <div class="date">January 2024 – June 2024 · Bengaluru, Karnataka</div>
+      </article>
+      <article class="job">
+        <h3>Senior System Engineer</h3><div class="company">Infosys</div>
+        <div class="date">March 2023 – January 2024 · Bengaluru, Karnataka</div>
+      </article>
+      <article class="job">
+        <h3>System Engineer</h3><div class="company">Infosys</div>
+        <div class="date">January 2021 – March 2023 · Pune, Maharashtra</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <div class="section-label">03 / Education</div>
+    <h2>Academic foundation</h2>
+    <div class="education">
+      <div class="card edu">
+        <div class="section-label">Bachelor's Degree</div>
+        <h3>Rustamji Institute of Technology, BSF Academy</h3>
+        <p>Bachelor of Engineering, Electrical, Electronics and Communications Engineering</p>
+        <p>2016 – 2020 · Tekanpur, Gwalior</p>
+      </div>
+      <div class="card">
+        <div class="section-label">Certifications</div>
+        <div class="tags">
+          <span class="tag">RHCSA Training V9</span>
+          <span class="tag">SQL (Basic) Certificate</span>
+          <span class="tag">ITIL Foundation Certificate in IT Service Management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">04 / Recognition</div>
+    <h2>Recognition & awards</h2>
+    <div class="awards">
+      <div class="award">🏆<b>Rise Insta Award</b><span>Professional recognition</span></div>
+      <div class="award">🏆<b>Rise Insta Award</b><span>Professional recognition</span></div>
+      <div class="award">🏆<b>Best Excellence Project Team</b><span>Team achievement</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-label">05 / Contact</div>
+    <div class="grid">
+      <div><h2>Let's build something reliable.</h2><p style="color:var(--muted)">Open to professional conversations, technology opportunities and connections.</p></div>
+      <div class="card">
+        <div class="contact-item"><small>Email</small><a href="mailto:shivkkumar75@gmail.com">shivkkumar75@gmail.com</a></div>
+        <div class="contact-item"><small>Phone</small><a href="tel:+917999936470">+91 79999 36470</a></div>
+        <div class="contact-item"><small>LinkedIn</small><a href="https://www.linkedin.com/in/shiv-kumar-mishra-a9986314b" target="_blank">shiv-kumar-mishra ↗</a></div>
+        <div class="contact-item"><small>Location</small>Bengaluru, Karnataka, India</div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">© 2026 Shiv Kumar Mishra · Unix & Linux Administrator</div>
+</footer>
+</body>
+</html>
